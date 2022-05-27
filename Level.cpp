@@ -2,7 +2,6 @@
 //  Level.cpp
 //  GameFin
 //
-//  Created by Zuzanna Kapcia on 16/05/2022.
 //  Copyright © 2022 Zuzanna Kapcia. All rights reserved.
 //
 
