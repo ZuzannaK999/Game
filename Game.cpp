@@ -2,7 +2,6 @@
 //  Game.cpp
 //  GameFin
 //
-//  Copyright © 2022 Zuzanna Kapcia. All rights reserved.
 //
 
 #include "Game.hpp"
