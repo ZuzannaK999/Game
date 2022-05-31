@@ -2,7 +2,6 @@
 //  Level.hpp
 //  GameFin
 //
-//  Copyright © 2022 Zuzanna Kapcia. All rights reserved.
 //
 
 #ifndef Level_hpp
