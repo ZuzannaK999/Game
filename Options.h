@@ -2,7 +2,6 @@
 //  Options.h
 //  GameFin
 //
-//  Copyright © 2022 Zuzanna Kapcia. All rights reserved.
 //
 
 #ifndef Options_h
