@@ -2,7 +2,6 @@
 //  MainMenu.h
 //  GameFin
 //
-//  Copyright © 2022 Zuzanna Kapcia. All rights reserved.
 //
 
 #ifndef MainMenu_h
