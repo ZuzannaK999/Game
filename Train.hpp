@@ -14,15 +14,12 @@
 #include <stdio.h>
 using namespace std;
 
-#define max_num_of_choices_T 3
-
 
 class Train : public Game
 {
 public:
     Train(float widthT, float heightT);
     ~Train();
-    
     void drawT(sf::RenderWindow &window);
     int TrainPressed() {
         return Selected;
