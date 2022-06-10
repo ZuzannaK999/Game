@@ -14,8 +14,6 @@
 using namespace sf;
 using namespace std;
 
-#define max_num_of_choices_O 3
-
 class Options : public Game
 {
 public:
