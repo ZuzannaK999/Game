@@ -14,8 +14,6 @@
 using namespace sf;
 using namespace std;
 
-#define max_num_of_choices 3
-
 class MainMenu : public Game
 {
 public:
