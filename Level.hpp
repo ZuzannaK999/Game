@@ -15,13 +15,10 @@
 #include <stdio.h>
 using namespace std;
 
-#define max_num_of_choices_L 3
-
-
 class Level : public Game
 {
 public:
-    Level(float widthT, float heightT);
+    Level(float widthL, float heightL);
     ~Level();
 
     int LevelPressed() {
