@@ -6,7 +6,6 @@
 
 //#include <stdio.h>
 #include "Options.h"
-#include "Game.hpp"
 
 Options::Options(float widthO, float heightO)
 {
