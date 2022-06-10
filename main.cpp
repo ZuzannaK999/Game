@@ -504,5 +504,94 @@ int main(int, char const**)
                                 if(goodBon.goodIsPicked(train2.wagonsVec[0].wagonPosX, train2.wagonsVec[0].wagonPosY))
                                 {
                                     train2.deleteWagon();
-                                    
                                 }
+                                 if(char1.isPicked(train2.wagonsVec[0].wagonPosX, train2.wagonsVec[0].wagonPosY))
+                                        {
+                                            score+=1;
+                                            scoreText.setString(to_string(score));
+                                            train2.addWagon();
+                                            if(score>=max_score)
+                                            {
+                                                RenderWindow FinalWindow(VideoMode(800,600), "END");
+                                                sf::Text endText;
+                                                endText.setFont(font);
+                                                endText.setString("CONGRATULATIONS!");
+                                                endText.setCharacterSize(70);
+                                                endText.setPosition(40,250);
+                                                endText.setFillColor(sf::Color::Black);
+                                                while(FinalWindow.isOpen())
+                                                {
+                                                    sf::Event ev;
+                                                    while(FinalWindow.pollEvent(ev))
+                                                    {
+                                                        if(ev.type == Event::Closed)
+                                                        {
+                                                            FinalWindow.close();
+                                                        }
+                                                        if(ev.type == Event::KeyPressed)
+                                                        {
+                                                            if(ev.key.code==Keyboard::Escape)
+                                                            {
+                                                            FinalWindow.close();
+                                                            }
+                                                        }
+                                                    }
+                                                FinalWindow.clear();
+                                                FinalWindow.draw(background2);
+                                                FinalWindow.draw(endText);
+                                                FinalWindow.display();
+                                                PlayWindow.close();
+                                                MenuWindow.close();
+                                                }
+                                            }
+                                       }
+                                train2.frontDirection(dire, train2Tex);
+                                if(train2.inGame == false)
+                                           {
+                                               play = false;
+                                               score = 0;
+                                               scoreText.setString("0");
+                                               clockk.restart();
+                                           }
+                            }
+                            train2.wagonsVec[0].wagons.setPosition(train2.wagonsVec[0].wagonPosX*24, train2.wagonsVec[0].wagonPosY*24);
+                                    //bottom border
+                                    if(train2.wagonsVec[0].wagons.getPosition().y+train2.wagonsVec[0].wagons.getGlobalBounds().height>PlayWindow.getSize().y-50){
+                                        train2.wagonsVec[0].wagons.setPosition(train2.wagonsVec[0].wagons.getPosition().x, PlayWindow.getSize().y-train2.wagonsVec[0].wagons.getGlobalBounds().height);
+                                    };
+                            PlayWindow.clear();
+                            PlayWindow.draw(background2);
+                            PlayWindow.draw(char1.char1Spr);
+                            PlayWindow.draw(goodBon.goodBonSpr);
+                            PlayWindow.draw(train2.wagonsVec[0].wagons);
+                            for(int i = 1; i < train2.numOfWagons; i++)
+                               {
+                                   PlayWindow.draw(train2.wagonsVec[i].wagons);
+                               }
+                            PlayWindow.draw(text);
+                            Play.drawP(PlayWindow);
+                            PlayWindow.draw(scoreText);
+                            PlayWindow.draw(textTimer);
+                            PlayWindow.display();
+                            OptionWindow.close();
+                        }
+                }
+                    if(m==2)
+                    {
+                        MenuWindow.close();
+                        break;
+                    }
+                }
+            }
+        }
+                if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+                MenuWindow.close();
+            }
+        MenuWindow.clear();
+        MenuWindow.draw(background);
+        MainMenu.draw(MenuWindow);
+        MenuWindow.display();
+    }
+    return EXIT_SUCCESS;
+}
+
