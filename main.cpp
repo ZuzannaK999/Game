@@ -84,9 +84,8 @@ int main(int, char const**)
     }
     Passengers char1;
     char1.char1Spr.setScale(0.2, 0.2);
-//    char1.char1Spr.setScale(1.5, 1.5);
     char1.char1Spr.setTexture(char1Tex);
-    //bonuses
+    //bonus sprite
     sf::Texture goodBonTex;
     if(!goodBonTex.loadFromFile("Coin1.png"))
     {
@@ -101,13 +100,12 @@ int main(int, char const**)
     {
         cout << "No font found";
     }
-    
     //texts in play window
     sf::Text text;
     text.setFillColor(sf::Color::Black);
     text.setFont(font);
     text.setPosition(655, 550);
-    //score
+    //score text
     sf::Text scoreText;
     scoreText.setFont(font);
     scoreText.setFillColor(sf::Color::Black);
@@ -555,7 +553,7 @@ int main(int, char const**)
                                            }
                             }
                             train2.wagonsVec[0].wagons.setPosition(train2.wagonsVec[0].wagonPosX*24, train2.wagonsVec[0].wagonPosY*24);
-                                    //bottom border
+                                    //bottom border collision prevention
                                     if(train2.wagonsVec[0].wagons.getPosition().y+train2.wagonsVec[0].wagons.getGlobalBounds().height>PlayWindow.getSize().y-50){
                                         train2.wagonsVec[0].wagons.setPosition(train2.wagonsVec[0].wagons.getPosition().x, PlayWindow.getSize().y-train2.wagonsVec[0].wagons.getGlobalBounds().height);
                                     };
