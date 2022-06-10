@@ -343,3 +343,102 @@ int main(int, char const**)
                             OptionWindow.display();
                           }
                      }
+                       if(m == 1)
+                    {
+                        PlayWindow.setFramerateLimit(60);
+                           srand(time(NULL));
+                           Clock clockk;
+                           Time time;
+                           stringstream ss;
+                           int s=0;
+                           int g=0;
+                           int m=0;
+                            while(PlayWindow.isOpen())
+                        {
+                            if(play == false)
+                                    {
+                                        for(int i = 0; i < 50; i++)
+                                        {
+                                        for(int j = 0; j < 40; j++)
+                                                gamemap[i][j] = 0;
+                                        }
+                                        dire=0;
+                                        train2.numOfWagons = 1;
+                                        train2.inGame = true;
+                                        train2.wagonsVec.clear();
+                                        train2.wagonsVec.push_back(front);
+                                        train2.wagonsVec[0].wagons.setRotation(180);
+                                        train2.wagonsVec[0].wagons.setOrigin(24,24);
+                                        char1.spawn();
+                                        goodBon.spawn();
+                                        goodBon.GoodBon_picked=0;
+                                        play = true;
+                                    }
+                         //timer
+                            ss.str("");
+                            time=clockk.getElapsedTime();
+                            s=time.asMilliseconds();
+                            g=s/1000;
+                            m=(s-(g*1000))/60;
+                            s=s-(g*1000+m*60);
+                     
+                            if(g<10)
+                            {
+                              ss<<"0"<<g;
+                            }
+                            else
+                            {
+                               ss<<g;
+                            }
+                            if(m<10)
+                            {
+                                ss<<":"<<"0"<<m;
+                            }
+                            else
+                            {
+                                ss<<":"<<m;
+                            }
+                            if(s<10)
+                            {
+                                ss<<":"<<"0"<<s;
+                            }
+                            else
+                            {
+                                ss<<":"<<s;
+                            }
+                            if(g>max)
+                            {
+                                RenderWindow OverWindow(VideoMode(800,600), "THE END");
+                                endText.setString("GAME OVER!");
+                                endText.setCharacterSize(70);
+                                endText.setPosition(200,250);
+                                endText.setFillColor(sf::Color::Black);
+                                while(OverWindow.isOpen())
+                                {
+                                    sf::Event eve;
+                                    while(OverWindow.pollEvent(eve))
+                                    {
+                                        if(eve.type == Event::Closed)
+                                        {
+                                            OverWindow.close();
+                                        }
+                                        if(eve.type == Event::KeyPressed)
+                                        {
+                                            if(eve.key.code==Keyboard::Escape)
+                                            {
+                                            OverWindow.close();
+                                            }
+                                        }
+                                    }
+                                OverWindow.clear();
+                                OverWindow.draw(background2);
+                                OverWindow.draw(endText);
+                                OverWindow.display();
+                                PlayWindow.close();
+                                MenuWindow.close();
+                                }
+                            }
+                            textTimer.setString(ss.str());
+                            PlayWindow.setFramerateLimit(60);
+                            PlayWindow.clear();
+                            timee=clock.getElapsedTime();
