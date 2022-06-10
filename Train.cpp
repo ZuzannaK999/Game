@@ -5,7 +5,6 @@
 //
 
 #include "Train.hpp"
-#include "Game.hpp"
 
 Train::Train(float widthT, float heightT)
 {
