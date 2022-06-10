@@ -442,3 +442,67 @@ int main(int, char const**)
                             PlayWindow.setFramerateLimit(60);
                             PlayWindow.clear();
                             timee=clock.getElapsedTime();
+
+
+                           sf::Event PlayEvent;
+                            while(PlayWindow.pollEvent(PlayEvent))
+                            {
+                                if(PlayEvent.type == Event::Closed)
+                                {
+                                    PlayWindow.close();
+                                }
+                                if(PlayEvent.type == Event::KeyPressed)
+                                {
+                                                    if(dire != 1 && dire != 2)
+                                                    {
+                                                        if(PlayEvent.key.code == sf::Keyboard::Up)
+                                                        {
+                                                            dire = 1;
+                                                            train2.wagonsVec[0].wagons.setRotation(0);
+                                                            train2.wagonsVec[0].wagons.setOrigin(0,0);
+                                                        }
+                                                        else if(PlayEvent.key.code == sf::Keyboard::Down)
+                                                        {
+                                                            dire = 2;
+                                                            train2.wagonsVec[0].wagons.setRotation(180);
+                                                            train2.wagonsVec[0].wagons.setOrigin(24,24);
+                                                        }
+                                                    }
+                                                    if(dire != 3 && dire != 4)
+                                                    {
+                                                        if(PlayEvent.key.code == sf::Keyboard::Right)
+                                                        {
+                                                            dire = 3;
+                                                            train2.wagonsVec[0].wagons.setRotation(90);
+                                                            train2.wagonsVec[0].wagons.setOrigin(0,24);
+                                                        }
+                                                        else if(PlayEvent.key.code == sf::Keyboard::Left)
+                                                        {
+                                                            dire = 4;
+                                                            train2.wagonsVec[0].wagons.setRotation(270);
+                                                            train2.wagonsVec[0].wagons.setOrigin(24,0);
+                                                        }
+                                                    }
+                                    if(PlayEvent.type == Event::KeyPressed)
+                                    {
+                                        if(PlayEvent.key.code == Keyboard::Escape)
+                                        {
+                                            PlayWindow.close();
+                                        }
+                                    }
+                                }
+                                if (char1.char_picked == 1 && random == false)
+                                            {
+                                                random = true;
+                                                srand(timee.asMilliseconds());
+                                            }
+                                if (goodBon.GoodBon_picked==1 && random == false)
+                                    {
+                                        random = true;
+                                        srand(timee.asMilliseconds());
+                                    }
+                                if(goodBon.goodIsPicked(train2.wagonsVec[0].wagonPosX, train2.wagonsVec[0].wagonPosY))
+                                {
+                                    train2.deleteWagon();
+                                    
+                                }
