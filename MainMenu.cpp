@@ -6,8 +6,6 @@
 
 //#include <stdio.h>
 #include "MainMenu.h"
-#include "Game.hpp"
-
 
 MainMenu::MainMenu(float width, float height)
 {
