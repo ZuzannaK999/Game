@@ -24,7 +24,7 @@ int trainBody::frontDirection(int direction, sf::Texture &train2Tex)
  {
  wagonsVec[numOfWagons-i].wagons.setTexture(train2Tex);
  wagonsVec[numOfWagons-i].wagons.setOrigin(0,0);
- wagonsVec[numOfWagons-i].wagons.setPosition(wagonsVec[numOfWagonsi-1].wagonPosX * 24, wagonsVec[numOfWagons-i-1].wagonPosY * 24);
+ wagonsVec[numOfWagons-i].wagons.setPosition(wagonsVec[numOfWagons-i-1].wagonPosX * 24, wagonsVec[numOfWagons-i-1].wagonPosY * 24);
  wagonsVec[numOfWagons-i].wagons.setRotation(0);
  wagonsVec[numOfWagons-i] = wagonsVec[numOfWagons-i-1];
  }
